@@ -33,6 +33,11 @@
   width: 40px;
 }
 
+.formErrors {
+  color: red;
+  font-size: 12px;
+}
+
 .formSubmit  {
   height: 20px;
   color: #fff !important;

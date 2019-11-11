@@ -4,20 +4,37 @@
 The idea is to create a recursive function to draw boxes inside each other in array from 3 different variables
 `width` `height` and `padding` 
 
+## Technology used 
+I used `create react app` for the UI and I used `Jest` for testing the function and `travis` for CI/CD
+I created 2 function for draw function in `draw.js` file I used different techniques for that one is recursion and the second solution is AB|CD or mirroring the array.
+
 ## Installation
-In the project directory, you can run:
+cd project directory, and run:
 
 `yarn && yarn start`
   
-  ## For Testing
-  Test only run on the draw() function matching data from `JSON` file to check the result of the function.
+## Testing
+Test only run on the draw() function matching data from `JSON` file to check the value given toward the result of the function.
 
-### `yarn test`
+I created the function inside an `object` so I can run deep testing on it as recursive function calls itself directly it is not possible to spy on those calls since they refer directly to the function.
+
+In order to spy on recursive calls they must refer to functions that can be spied on. Fortunately, this is possible by two ways either by wrapping the function inside object or by importing a recursive function back into its own module and use the imported function for the recursion
+
+so I chooses the first option to run the jest.
+
+to run the testing 
+`yarn test`
 
 ## First Solution
 
-The first solution I am using Array.from to create every row in the array 
-by checking one by one 
+The first solution I used Array.from to get the  `width` of the array and the `height` of the array and then create every row in the array separately.
+
+
+
+
+
+### The Big O 
+
 
 ## Second Solution
 
@@ -90,12 +107,11 @@ if (col % delta === 0 && col <= row) return 2;
 
 1.  `Width: 20, Height:40, padding: 6)`
 
-![20,40,6](https://picasaweb.google.com/112928014644094121650/6757962420754464129#6757962427490589970)
+![](https://lh3.googleusercontent.com/QmwcjSKo9bmjIohy8TcKbxU4w-PL1mQUpNnE5Gey422bUrE8lo9ghRnB4ZO5bRVdHet3wsPISYOhmQ=s500)
 
 2.  `(Width: 60, Height:60, padding: 10)`
 
-![60,60,10](https://picasaweb.google.com/112928014644094121650/6757962693717715745#6757962691239103906)
-
+![](https://lh3.googleusercontent.com/qX4C23dp9LGFNUF53IZ6JmQA2OcJhFp8EwprwuamopsSUENT8odO1JQX1LGAmMGxgpAEISq1TAyNzg=s600)
 4.  `(Width: 80, Height:100, padding: 20)`
 
-![80,100,20](https://picasaweb.google.com/112928014644094121650/6757962889374425153#6757962890808696818)
+![](https://lh3.googleusercontent.com/WgT8WJ89i1tTRXUyISyRahAx6ZNCJD_BJ8skDSgqfvR5rqewbhV_xtY82dmj5f0MvCe3nYaCuC4pRQ=s720)

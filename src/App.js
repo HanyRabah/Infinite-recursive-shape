@@ -25,22 +25,24 @@ function App() {
  
 const validate = () => {
   const errors = [];
-  if(formValues.width < 20){
-    errors.push("Error in width" );
+
+  if(formValues.width < 20 || formValues.width > 300){
+    errors.push(`width value should be even and greater or equal to 20 and less than or equal 300 , ${formValues.width} given`);
   }
-  if(formValues.height < 20){
-    errors.push("Error in height" );
+  if(formValues.height < 20 || formValues.height > 300){
+    errors.push(`height value should be even and greater or equal to 20 and less than or equal 300 , ${formValues.height} given`);
   }
-  if(formValues.padding < 4){
-    errors.push("Error in padding")
+  if(formValues.padding < 4 || formValues.padding > 60 || formValues.padding % 2 != 0){
+    errors.push(`Padding value should be even and greater or equal to 4 and less than or equal 60 and even number, ${formValues.padding} given`)
   } 
   return errors;
+  
 }
 
   const handleSubmit = (event) => {
     event && event.preventDefault();
     const errors = validate();
-    if (errors) {
+    if (errors.length > 0) {
       setFormError(errors);
       return;
     }
@@ -65,7 +67,7 @@ const validate = () => {
       </div>
       <input className="formSubmit" type="submit" value="Submit"  />
         {formError.map((value, index) => {
-          return <div key={index}>{value}</div>
+          return <div className="formErrors" key={index}>{value}</div>
         })}
         <pre>{matrix}</pre>
     </form>

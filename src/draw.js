@@ -1,4 +1,4 @@
-//recursive solution
+//First Solution: recursive
 // I created it as an object so I can mock it in the tests
 const draw = {
   init: function (width, height, padding)  {
@@ -22,9 +22,7 @@ const draw = {
   }
 };
 
-module.exports = draw;
-
-// Second solution
+// Second solution: Mirroring the Array.
 // function draw(width, height, padding) {
 //   var pad = 1 + padding / 2;
 //   return Array.from({ length: height }, (_, row) => {
@@ -37,7 +35,5 @@ module.exports = draw;
 //       });
 //   });
 // }
-// module.exports = draw;
 
-
-
+module.exports = draw;
