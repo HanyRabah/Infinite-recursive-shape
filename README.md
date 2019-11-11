@@ -29,8 +29,14 @@ to run the testing
 
 The first solution I used Array.from to get the  `width` of the array and the `height` of the array and then create every row in the array separately.
 
+so the idea in any recursion function is to put the base case so my main base case is to check if the width and height less than or equal to zero then stop the function.
 
+then checking on the height if it less than 2 draw the last row
 
+then I have 2 returns after than the main one which will have the recursion after subtracting the padding after adding 2 to it to count the edges.
+
+the the second return is happen only to draw the last box inside the array.
+you can see more details on the `draw.js` file.
 
 
 ### The Big O 
@@ -112,6 +118,7 @@ if (col % delta === 0 && col <= row) return 2;
 2.  `(Width: 60, Height:60, padding: 10)`
 
 ![](https://lh3.googleusercontent.com/qX4C23dp9LGFNUF53IZ6JmQA2OcJhFp8EwprwuamopsSUENT8odO1JQX1LGAmMGxgpAEISq1TAyNzg=s600)
+
 4.  `(Width: 80, Height:100, padding: 20)`
 
 ![](https://lh3.googleusercontent.com/WgT8WJ89i1tTRXUyISyRahAx6ZNCJD_BJ8skDSgqfvR5rqewbhV_xtY82dmj5f0MvCe3nYaCuC4pRQ=s720)
