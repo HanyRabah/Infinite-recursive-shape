@@ -7,8 +7,6 @@ test('draw function exists', () => {
   expect(draw.init).toBeDefined();
 });
 
-
-
 data.forEach(function(test){
   it(test.input + ' to give correct result',  () => {
     const mock = jest.spyOn(draw, 'init');
